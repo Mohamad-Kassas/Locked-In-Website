@@ -37,7 +37,7 @@
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #ffffff;
-  --bs-dark: #212529;
+  --bs-dark: #222a30;
   --bs-primary-rgb: 17, 21, 24;
   --bs-secondary-rgb: 135, 8, 16;
   --bs-success-rgb: 25, 135, 84;
@@ -45,7 +45,7 @@
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 255, 255, 255;
-  --bs-dark-rgb: 33, 37, 41;
+  --bs-dark-rgb: 34, 42, 48;
   --bs-primary-text-emphasis: rgb(6.8, 8.4, 9.6);
   --bs-secondary-text-emphasis: rgb(54, 3.2, 6.4);
   --bs-success-text-emphasis: rgb(10, 54, 33.6);
@@ -2029,13 +2029,13 @@ progress {
 
 .table-dark {
   --bs-table-color: #fff;
-  --bs-table-bg: #212529;
-  --bs-table-border-color: rgb(77.4, 80.6, 83.8);
-  --bs-table-striped-bg: rgb(44.1, 47.9, 51.7);
+  --bs-table-bg: #222a30;
+  --bs-table-border-color: rgb(78.2, 84.6, 89.4);
+  --bs-table-striped-bg: rgb(45.05, 52.65, 58.35);
   --bs-table-striped-color: #fff;
-  --bs-table-active-bg: rgb(55.2, 58.8, 62.4);
+  --bs-table-active-bg: rgb(56.1, 63.3, 68.7);
   --bs-table-active-color: #fff;
-  --bs-table-hover-bg: rgb(49.65, 53.35, 57.05);
+  --bs-table-hover-bg: rgb(50.575, 57.975, 63.525);
   --bs-table-hover-color: #fff;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3088,19 +3088,19 @@ textarea.form-control-lg {
 
 .btn-dark {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #212529;
-  --bs-btn-border-color: #212529;
+  --bs-btn-bg: #222a30;
+  --bs-btn-border-color: #222a30;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: rgb(66.3, 69.7, 73.1);
-  --bs-btn-hover-border-color: rgb(55.2, 58.8, 62.4);
-  --bs-btn-focus-shadow-rgb: 66, 70, 73;
+  --bs-btn-hover-bg: rgb(67.15, 73.95, 79.05);
+  --bs-btn-hover-border-color: rgb(56.1, 63.3, 68.7);
+  --bs-btn-focus-shadow-rgb: 67, 74, 79;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: rgb(77.4, 80.6, 83.8);
-  --bs-btn-active-border-color: rgb(55.2, 58.8, 62.4);
+  --bs-btn-active-bg: rgb(78.2, 84.6, 89.4);
+  --bs-btn-active-border-color: rgb(56.1, 63.3, 68.7);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #212529;
-  --bs-btn-disabled-border-color: #212529;
+  --bs-btn-disabled-bg: #222a30;
+  --bs-btn-disabled-border-color: #222a30;
 }
 
 .btn-outline-primary {
@@ -3223,19 +3223,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-dark {
-  --bs-btn-color: #212529;
-  --bs-btn-border-color: #212529;
+  --bs-btn-color: #222a30;
+  --bs-btn-border-color: #222a30;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #212529;
-  --bs-btn-hover-border-color: #212529;
-  --bs-btn-focus-shadow-rgb: 33, 37, 41;
+  --bs-btn-hover-bg: #222a30;
+  --bs-btn-hover-border-color: #222a30;
+  --bs-btn-focus-shadow-rgb: 34, 42, 48;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #212529;
-  --bs-btn-active-border-color: #212529;
+  --bs-btn-active-bg: #222a30;
+  --bs-btn-active-border-color: #222a30;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #212529;
+  --bs-btn-disabled-color: #222a30;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #212529;
+  --bs-btn-disabled-border-color: #222a30;
   --bs-gradient: none;
 }
 
@@ -6855,8 +6855,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-dark-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-dark:hover, .link-dark:focus {
-  color: RGBA(26, 30, 33, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(26, 30, 33, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(27, 34, 38, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(27, 34, 38, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-body-emphasis {
@@ -11854,6 +11854,18 @@ textarea.form-control-lg {
   text-align: justify;
 }
 
+.card-transform {
+  transition: transform 0.1s ease-in-out;
+}
+
+.card-transform:hover {
+  transform: scale(1.02);
+}
+
+.highlight-plan {
+  background: linear-gradient(180deg, #870810 0%, #111518 100%);
+}
+
 .radial {
   bottom: -30%;
   right: -30%;
@@ -11888,6 +11900,13 @@ textarea.form-control-lg {
 @media (min-width: 1200px) {
   .homepage-title {
     font-size: 4rem;
+  }
+  .homepage-trainer {
+    display: inline;
+    position: absolute;
+    bottom: 0;
+    right: 10rem;
+    width: 55vh;
   }
 }
 

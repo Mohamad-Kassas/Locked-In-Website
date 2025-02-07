@@ -8,6 +8,7 @@ $font-weight-bolder: 900;
 $primary: #111518;
 $secondary: #870810;
 $light: #ffffff;
+$dark: #222a30;
 
 // Import Bootstrap (AFTER variables are defined)
 @import "../../node_modules/bootstrap/scss/bootstrap";
@@ -26,6 +27,26 @@ $light: #ffffff;
 }
 
 // =======================================
+// 📌 3️⃣ Plans Page Elements
+// =======================================
+
+.card-transform {
+  transition: transform 0.1s ease-in-out;
+}
+
+.card-transform:hover {
+  transform: scale(1.02);
+}
+
+.highlight-plan {
+  background: linear-gradient(
+    180deg,
+    rgba($secondary, 1) 0%,
+    rgba($primary, 1) 100%
+  );
+}
+
+// =======================================
 // 📌 3️⃣ Background Effects (Radial Gradient)
 // =======================================
 .radial {
@@ -33,8 +54,9 @@ $light: #ffffff;
   right: -30%;
   background: radial-gradient(
     42.1% 42.1% at 50% 50%,
-    rgba($secondary, 0.3) 0%,  // Uses Bootstrap $secondary
-    rgba($secondary, 0) 100% 
+    rgba($secondary, 0.3) 0%,
+    // Uses Bootstrap $secondary
+    rgba($secondary, 0) 100%
   );
 }
 
@@ -72,5 +94,12 @@ $light: #ffffff;
 @media (min-width: 1200px) {
   .homepage-title {
     font-size: 4rem;
+  }
+  .homepage-trainer {
+    display: inline;
+    position: absolute;
+    bottom: 0;
+    right: 10rem;
+    width: 55vh;
   }
 }
