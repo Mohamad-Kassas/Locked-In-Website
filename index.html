@@ -1,13 +1,42 @@
 <!doctype html>
+<html data-bs-theme="dark"></html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Custom Bootstrap</title>
-    <link href="/public/css/custom.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Locked In</title>
+    <link href="/public/css/custom.css" rel="stylesheet" />
   </head>
+  <script type="module" src="/public/js/main.js"></script>
   <body>
-    <h1>Hello, world!</h1>
-
+    <div id="navbar-container"></div>
+    <section class="container-fluid text-light pt-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left: Text Content -->
+          <div class="col-lg-6">
+            <h1 class="fw-bolder homepage-title mb-5">
+              UN<span class="text-secondary">LOCK</span> YOUR
+              <br />
+              BEST SELF
+            </h1>
+            <p class="fs-5 text-justify">
+              Transform your fitness journey with
+              <span class="text-secondary fw-bold">Locked</span> In. Our
+              personalized training programs are designed to help you crush your
+              goals. Commit to the grind and see the results you deserve!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <img
+      src="/public/images/Home Page Trainer.png"
+      alt="Man lifting weights"
+      class="img-fluid homepage-trainer user-select-none pe-none"
+    />
+    <div class="radial-container top-0 left-0 vw-100 vh-100 position-absolute overflow-hidden z-n1">
+      <div class="radial vh-100 vw-100 position-absolute right-0 rounded-circle"/>
+    </div>
   </body>
 </html>
