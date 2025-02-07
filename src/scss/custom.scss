@@ -1,77 +1,65 @@
-// Import fonts and override Bootstrap
+// =======================================
+// 📌 1️⃣ Import Fonts & Override Bootstrap
+// =======================================
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 $font-family-sans-serif: "Montserrat", sans-serif;
 $font-weight-bolder: 900;
 $primary: #111518;
 $secondary: #870810;
 $light: #ffffff;
 
-// Import Bootstrap
+// Import Bootstrap (AFTER variables are defined)
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-/* Override secondary background color */
+// =======================================
+// 📌 2️⃣ Global Overrides
+// =======================================
 :root {
   --bs-body-bg: #111518;
   --bs-secondary-bg-rgb: 135, 8, 16;
 }
 
+// Justify Text Utility (Bootstrap does not provide this)
+.text-justify {
+  text-align: justify;
+}
+
+// =======================================
+// 📌 3️⃣ Background Effects (Radial Gradient)
+// =======================================
 .radial {
   bottom: -30%;
   right: -30%;
   background: radial-gradient(
     42.1% 42.1% at 50% 50%,
-    rgba($secondary, 0.3) 0%, /* Use $secondary with opacity */
-    rgba($secondary, 0) 100%  /* Fades to transparent */
+    rgba($secondary, 0.3) 0%,  // Uses Bootstrap $secondary
+    rgba($secondary, 0) 100% 
   );
 }
 
-
-// Create custom text justify
-.text-justify {
-  text-align: justify;
-}
-
-// Create custom sizing for title in home screen
+// =======================================
+// 📌 4️⃣ Responsive Styles (Homepage Elements)
+// =======================================
 @media (min-width: 1px) {
-  // Small screens (sm)
   .homepage-title {
     font-size: 2rem;
   }
-
-  .homepage-trainer {
-    display: none;
-  }
-}
-
-// Custom font sizes for h1
-@media (min-width: 576px) {
-  // Small screens (sm)
-  .homepage-title {
-    font-size: 2rem;
-  }
-
   .homepage-trainer {
     display: none;
   }
 }
 
 @media (min-width: 768px) {
-  // Medium screens (md)
   .homepage-title {
     font-size: 2.5rem;
-  }
-
-  .homepage-trainer {
-    display: none;
   }
 }
 
 @media (min-width: 992px) {
-  // Large screens (lg)
   .homepage-title {
     font-size: 3rem;
   }
-
   .homepage-trainer {
     display: inline;
     position: absolute;
@@ -82,16 +70,7 @@ $light: #ffffff;
 }
 
 @media (min-width: 1200px) {
-  // Extra-large screens (xl)
   .homepage-title {
     font-size: 4rem;
-  }
-
-  .homepage-trainer {
-    display: inline;
-    position: absolute;
-    bottom: 0;
-    right: 10rem;
-    width: 55vh;
   }
 }

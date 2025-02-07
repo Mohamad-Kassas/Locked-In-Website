@@ -11845,20 +11845,19 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-/* Override secondary background color */
 :root {
   --bs-body-bg: #111518;
   --bs-secondary-bg-rgb: 135, 8, 16;
+}
+
+.text-justify {
+  text-align: justify;
 }
 
 .radial {
   bottom: -30%;
   right: -30%;
   background: radial-gradient(42.1% 42.1% at 50% 50%, rgba(135, 8, 16, 0.3) 0%, rgba(135, 8, 16, 0) 100%);
-}
-
-.text-justify {
-  text-align: justify;
 }
 
 @media (min-width: 1px) {
@@ -11869,20 +11868,9 @@ textarea.form-control-lg {
     display: none;
   }
 }
-@media (min-width: 576px) {
-  .homepage-title {
-    font-size: 2rem;
-  }
-  .homepage-trainer {
-    display: none;
-  }
-}
 @media (min-width: 768px) {
   .homepage-title {
     font-size: 2.5rem;
-  }
-  .homepage-trainer {
-    display: none;
   }
 }
 @media (min-width: 992px) {
@@ -11900,13 +11888,6 @@ textarea.form-control-lg {
 @media (min-width: 1200px) {
   .homepage-title {
     font-size: 4rem;
-  }
-  .homepage-trainer {
-    display: inline;
-    position: absolute;
-    bottom: 0;
-    right: 10rem;
-    width: 55vh;
   }
 }
 
