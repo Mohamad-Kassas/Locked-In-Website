@@ -1,5 +1,5 @@
 // =======================================
-// 📌 1️⃣ Import Fonts & Override Bootstrap
+//  Import Fonts & Override Bootstrap
 // =======================================
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
@@ -7,6 +7,8 @@ $font-family-sans-serif: "Montserrat", sans-serif;
 $font-weight-bolder: 900;
 $primary: #111518;
 $secondary: #870810;
+$info: #adadad;
+$danger: #f21826;
 $light: #ffffff;
 $dark: #222a30;
 
@@ -14,7 +16,7 @@ $dark: #222a30;
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // =======================================
-// 📌 2️⃣ Global Overrides
+//  Global Overrides
 // =======================================
 :root {
   --bs-body-bg: #111518;
@@ -27,7 +29,7 @@ $dark: #222a30;
 }
 
 // =======================================
-// 📌 3️⃣ Plans Page Elements
+//  Plans Page Elements
 // =======================================
 
 .card-transform {
@@ -47,7 +49,32 @@ $dark: #222a30;
 }
 
 // =======================================
-// 📌 3️⃣ Background Effects (Radial Gradient)
+//  Trainers Page Elements
+// =======================================
+
+.text-shadow {
+  text-shadow:
+    1px 1px 3px $primary,
+    -1px -1px 3px $primary,
+    1px -1px 3px $primary,
+    -1px 1px 3px $primary;
+}
+
+.text-outline {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $primary;
+  font-weight: 1000;
+}
+
+.icons {
+  max-width: 3.125rem;
+  max-height: 3.125rem;
+  width: auto;
+  height: auto;
+}
+
+// =======================================
+//  Background Effects (Radial Gradient)
 // =======================================
 .radial {
   bottom: -30%;
@@ -61,7 +88,7 @@ $dark: #222a30;
 }
 
 // =======================================
-// 📌 4️⃣ Responsive Styles (Homepage Elements)
+//  Responsive Styles (Homepage Elements)
 // =======================================
 @media (min-width: 1px) {
   .homepage-title {
@@ -78,7 +105,7 @@ $dark: #222a30;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 991px) {
   .homepage-title {
     font-size: 3rem;
   }
