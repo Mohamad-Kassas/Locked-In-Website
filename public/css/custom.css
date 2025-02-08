@@ -11881,6 +11881,8 @@ textarea.form-control-lg {
   max-height: 3.125rem;
   width: auto;
   height: auto;
+  pointer-events: none;
+  user-select: none;
 }
 
 .radial {
@@ -11890,7 +11892,7 @@ textarea.form-control-lg {
 }
 
 @media (min-width: 1px) {
-  .homepage-title {
+  .page-title {
     font-size: 2rem;
   }
   .homepage-trainer {
@@ -11898,12 +11900,12 @@ textarea.form-control-lg {
   }
 }
 @media (min-width: 768px) {
-  .homepage-title {
+  .page-title {
     font-size: 2.5rem;
   }
 }
 @media (min-width: 991px) {
-  .homepage-title {
+  .page-title {
     font-size: 3rem;
   }
   .homepage-trainer {
@@ -11915,7 +11917,7 @@ textarea.form-control-lg {
   }
 }
 @media (min-width: 1200px) {
-  .homepage-title {
+  .page-title {
     font-size: 4rem;
   }
   .homepage-trainer {
