@@ -11885,6 +11885,154 @@ textarea.form-control-lg {
   user-select: none;
 }
 
+.plan-card,
+.trainer-card {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent;
+  user-select: none;
+}
+
+.plan-card:hover,
+.trainer-card:hover {
+  transform: scale(1.05);
+}
+
+.plan-card.selected,
+.trainer-card.selected {
+  border-color: #f21826 !important;
+  box-shadow: 0 0 15px rgba(242, 24, 38, 0.8);
+  background: linear-gradient(#870810 0%, rgba(242, 24, 38, 0.5) 100%);
+  transform: scale(1.05);
+  user-select: none;
+}
+
+.plan-card.selected .LOCKED {
+  color: #111518;
+}
+
+.trainer-card.selected {
+  color: #ffffff !important;
+}
+
+.trainer-card.selected .icons {
+  filter: brightness(0) invert(1);
+}
+
+.trainer-card .icons {
+  transform: scale(0.8);
+}
+
+/* =============== Flatpicker Styles =============== */
+/* ===== Calendar Container ===== */
+.flatpickr-calendar {
+  background-color: #222a30;
+  color: white;
+  border: 2px solid #ffffff;
+}
+
+/* ===== Calendar Days ===== */
+.flatpickr-day {
+  color: white;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  border-radius: 50%;
+  border: none;
+  user-select: none;
+}
+
+/* Today Indicator */
+.flatpickr-day.today {
+  color: #870810;
+}
+
+/* Selected Date */
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover {
+  background-color: #870810;
+  color: white;
+  border-radius: 50%;
+  user-select: none;
+}
+
+/* Hover Effect */
+.flatpickr-day:hover {
+  background-color: rgba(135, 8, 16, 0.5);
+  color: white;
+}
+
+/* Previous & Next Month Dates */
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay {
+  color: #adadad;
+}
+
+/* Disabled Dates */
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover {
+  color: #ffffff;
+  cursor: not-allowed;
+  opacity: 0.5;
+  background: none;
+}
+
+/* ===== Header & Weekdays ===== */
+span.flatpickr-weekday {
+  color: #870810;
+  font-weight: bold;
+}
+
+.flatpickr-current-month,
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-current-month input.cur-year {
+  color: #870810;
+  font-weight: 700;
+}
+
+/* ===== Month Navigation Arrows ===== */
+.flatpickr-months .flatpickr-next-month svg,
+.flatpickr-months .flatpickr-prev-month svg {
+  fill: #f21826;
+}
+
+/* ===== Time Picker ===== */
+.flatpickr-time {
+  border: 1px solid #ffffff;
+}
+
+.flatpickr-time input,
+.flatpickr-time input:hover,
+.flatpickr-time input:focus,
+.flatpickr-time .flatpickr-time-separator {
+  color: white;
+  background: none;
+}
+
+/* Time Picker Arrows */
+.flatpickr-time .arrowUp::after,
+.flatpickr-time .arrowDown::after {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid rgba(57, 57, 57, 0.6);
+}
+
+.flatpickr-time .numInputWrapper span.arrowUp::after {
+  border-bottom-color: #ffffff;
+}
+
+.flatpickr-time .numInputWrapper span.arrowDown::after {
+  border-top-color: #ffffff;
+}
+
+/* Time Picker Arrows (Month Navigation) */
+.flatpickr-current-month .numInputWrapper span.arrowUp::after {
+  border-bottom-color: #f21826;
+}
+
+.flatpickr-current-month .numInputWrapper span.arrowDown::after {
+  border-top-color: #f21826;
+}
+
 .radial {
   bottom: -30%;
   right: -30%;

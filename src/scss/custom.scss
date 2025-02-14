@@ -76,6 +76,157 @@ $dark: #222a30;
 }
 
 // =======================================
+//  Booking Page Elements
+// =======================================
+.plan-card,
+.trainer-card {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent;
+  user-select: none;
+}
+
+.plan-card:hover,
+.trainer-card:hover {
+  transform: scale(1.05);
+}
+
+.plan-card.selected,
+.trainer-card.selected {
+  border-color: $danger !important;
+  box-shadow: 0 0 15px rgba($danger, 0.8);
+  background: linear-gradient($secondary 0%, rgba($danger, 0.5) 100%);
+  transform: scale(1.05);
+  user-select: none;
+}
+
+.plan-card.selected .LOCKED {
+  color: $primary;
+}
+
+.trainer-card.selected {
+  color: $light !important;
+}
+
+.trainer-card.selected .icons {
+  filter: brightness(0) invert(1);
+}
+
+.trainer-card .icons {
+  transform: scale(0.8);
+}
+
+/* =============== Flatpicker Styles =============== */
+/* ===== Calendar Container ===== */
+.flatpickr-calendar {
+  background-color: $dark;
+  color: white;
+  border: 2px solid $light;
+}
+
+/* ===== Calendar Days ===== */
+.flatpickr-day {
+  color: white;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  border-radius: 50%;
+  border: none;
+  user-select: none;
+}
+
+/* Today Indicator */
+.flatpickr-day.today {
+  color: $secondary;
+}
+
+/* Selected Date */
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover {
+  background-color: $secondary;
+  color: white;
+  border-radius: 50%;
+  user-select: none;
+}
+
+/* Hover Effect */
+.flatpickr-day:hover {
+  background-color: rgba($secondary, 0.5);
+  color: white;
+}
+
+/* Previous & Next Month Dates */
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay {
+  color: $info;
+}
+
+/* Disabled Dates */
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover {
+  color: $light;
+  cursor: not-allowed;
+  opacity: 0.5;
+  background: none;
+}
+
+/* ===== Header & Weekdays ===== */
+span.flatpickr-weekday {
+  color: $secondary;
+  font-weight: bold;
+}
+
+.flatpickr-current-month,
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-current-month input.cur-year {
+  color: $secondary;
+  font-weight: 700;
+}
+
+/* ===== Month Navigation Arrows ===== */
+.flatpickr-months .flatpickr-next-month svg,
+.flatpickr-months .flatpickr-prev-month svg {
+  fill: $danger;
+}
+
+/* ===== Time Picker ===== */
+.flatpickr-time {
+  border: 1px solid $light;
+}
+
+.flatpickr-time input,
+.flatpickr-time input:hover,
+.flatpickr-time input:focus,
+.flatpickr-time .flatpickr-time-separator {
+  color: white;
+  background: none;
+}
+
+/* Time Picker Arrows */
+.flatpickr-time .arrowUp::after,
+.flatpickr-time .arrowDown::after {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid rgba(57, 57, 57, 0.6);
+}
+
+.flatpickr-time .numInputWrapper span.arrowUp::after {
+  border-bottom-color: $light;
+}
+
+.flatpickr-time .numInputWrapper span.arrowDown::after {
+  border-top-color: $light;
+}
+
+/* Time Picker Arrows (Month Navigation) */
+.flatpickr-current-month .numInputWrapper span.arrowUp::after {
+  border-bottom-color: $danger;
+}
+
+.flatpickr-current-month .numInputWrapper span.arrowDown::after {
+  border-top-color: $danger;
+}
+
+// =======================================
 //  Background Effects (Radial Gradient)
 // =======================================
 .radial {
