@@ -1,6 +1,6 @@
-import "bootstrap"
-import flatpickr from "flatpickr"
-import "flatpickr/dist/flatpickr.min.css"
+import "../../node_modules/bootstrap/dist/js/bootstrap.esm.min.js"
+import "../../node_modules/flatpickr/dist/flatpickr.js";
+import "../../node_modules/flatpickr/dist/flatpickr.min.css"
 
 // Function to dynamically insert the navbar
 async function loadNavbar() {
@@ -71,13 +71,13 @@ const plans = [
   },
 ]
 
-document.querySelectorAll('.plan-selector').forEach(button => {
-  button.addEventListener('click', () => {
-    const planName = button.getAttribute('plan');
-    localStorage.setItem('selectedPlan', planName);
-    window.location.href = '/public/pages/booking.html';
-  });
-});
+document.querySelectorAll(".plan-selector").forEach((button) => {
+  button.addEventListener("click", () => {
+    const planName = button.getAttribute("plan")
+    localStorage.setItem("selectedPlan", planName)
+    window.location.href = "booking.html"
+  })
+})
 
 async function loadTrainerCards() {
   const trainerContainer = document.getElementById("trainers-container")
@@ -98,13 +98,12 @@ async function loadTrainerCards() {
       trainerContainer.innerHTML += trainerHTML
     })
 
-    document.querySelectorAll('.trainer-selector').forEach(button => {
-      button.addEventListener('click', () => {
-        const trainerName = button.getAttribute('trainer');
-        localStorage.setItem('selectedTrainer', trainerName);
-      });
-    });
-    
+    document.querySelectorAll(".trainer-selector").forEach((button) => {
+      button.addEventListener("click", () => {
+        const trainerName = button.getAttribute("trainer")
+        localStorage.setItem("selectedTrainer", trainerName)
+      })
+    })
   } catch (error) {
     console.log("Cannot load trainer cards on this page")
   }
@@ -328,7 +327,6 @@ async function loadTrainerConfirmation() {
       .replace(/POSITION/g, trainer.position)
       .replace(/CLASS/g, trainer.class)
     trainerContainer.innerHTML = trainerHTML
-
   } catch (error) {
     console.log("Cannot load trainer confirmation on this page")
   }
