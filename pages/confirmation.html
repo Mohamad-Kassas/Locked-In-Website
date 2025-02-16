@@ -1,0 +1,78 @@
+<!doctype html>
+<html data-bs-theme="dark"></html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Locked In</title>
+    <link href="../css/custom.css" rel="stylesheet" />
+  </head>
+  <script type="module" src="../js/main.js"></script>
+  <body>
+    <div id="navbar-container"></div>
+
+    <div class="container pt-5 text-light">
+      <h1 class="fw-bold fs-1">Your Booking is Confirmed</h1>
+      <h4 class="fw-semibold fs-2 mb-4">Here are your session details</h4>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Column 1: Date, Plan and Trainer -->
+        <div class="col-lg-8 d-flex">
+          <div class="row g-4 flex-fill">
+            <!-- Column 1: Date and Plan -->
+            <div class="col-md-4 d-flex flex-column justify-content-between">
+              <div class="row g-4 flex-fill">
+                <!-- Date Card -->
+                <div class="col-12 text-center">
+                  <h4 class="fw-bold">Date</h4>
+                  <div id="date-details"></div>
+                </div>
+
+                <!-- Plan Card -->
+                <div class="col-12 text-center">
+                  <h4 class="fw-bold">Plan</h4>
+                  <div id="plan-details"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 2: Trainer -->
+            <div
+              class="col-md-6 text-center d-flex flex-column justify-content-between"
+            >
+              <h4 class="fw-bold">Trainer</h4>
+              <div id="trainer-confirmation"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: What to do next buttons -->
+        <div class="col-lg-4 d-flex flex-column justify-content-start">
+          <h4 class="fw-bold mb-4">What would you like to do next?</h4>
+          <div class="d-grid gap-5">
+            <a href="#" class="btn btn-secondary btn-lg fw-bold rounded-1"
+              >Add to Calendar</a
+            >
+            <a href="#" class="btn btn-secondary btn-lg fw-bold rounded-1"
+              >Book Another Session</a
+            >
+            <a href="#" class="btn btn-secondary btn-lg fw-bold rounded-1"
+              >Manage Booking</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-5 fs-5 text-center">
+        <em>
+          Thank you for choosing <span class="text-danger">Locked</span> In.
+          We’re here to help you achieve your goals.<br />For any questions,
+          contact us at
+          <a href="mailto:contact@lockedin.com" class="text-light"
+            >contact@lockedin.com</a
+          >
+        </em>
+      </p>
+    </div>
+  </body>
+</html>
