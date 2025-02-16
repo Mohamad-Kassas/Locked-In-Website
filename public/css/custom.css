@@ -12033,6 +12033,20 @@ span.flatpickr-weekday {
   border-top-color: #f21826;
 }
 
+.lock-it-in {
+  transition: all 0.15s ease-in-out;
+  background: linear-gradient(90deg, #f21826 0%, #870810 100%);
+  border: none;
+}
+
+.lock-it-in:hover {
+  opacity: 0.75;
+}
+
+.w-33 {
+  width: 33% !important;
+}
+
 .radial {
   bottom: -30%;
   right: -30%;

@@ -227,6 +227,27 @@ span.flatpickr-weekday {
 }
 
 // =======================================
+//  Client Page Elements
+// =======================================
+.lock-it-in {
+  transition: all 0.15s ease-in-out;
+  background: linear-gradient(
+    90deg,
+    rgba($danger, 1) 0%,
+    rgba($secondary, 1) 100%
+  );
+  border: none;
+}
+
+.lock-it-in:hover {
+  opacity: 0.75;
+}
+
+.w-33 {
+  width: 33% !important;
+}
+
+// =======================================
 //  Background Effects (Radial Gradient)
 // =======================================
 .radial {

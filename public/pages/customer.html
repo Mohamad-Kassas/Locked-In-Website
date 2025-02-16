@@ -1,0 +1,116 @@
+<!doctype html>
+<html data-bs-theme="dark"></html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Locked In</title>
+    <link href="/public/css/custom.css" rel="stylesheet" />
+  </head>
+  <script type="module" src="/public/js/main.js"></script>
+  <body>
+    <div id="navbar-container"></div>
+
+    <div class="container py-4">
+      <!-- Step 2: Provide Your Info -->
+      <h2 class="fw-bold fs-1">Step 2: Provide Your Info</h2>
+
+      <div class="row g-3 mt-2">
+        <!-- Column 1 -->
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control bg-dark text-light p-3 rounded-3 border border-secondary border-5"
+              placeholder="Enter Your First Name"
+            />
+          </div>
+          <div>
+            <label class="form-label">Phone Number</label>
+            <input
+              type="text"
+              class="form-control bg-dark text-light p-3 rounded-3 border border-secondary border-5"
+              placeholder="Enter Your Phone Number"
+            />
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control bg-dark text-light p-3 rounded-3 border border-secondary border-5"
+              placeholder="Enter Your Last Name"
+            />
+          </div>
+          <div>
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control bg-dark text-light p-3 rounded-3 border border-secondary border-5"
+              placeholder="Enter Your Email"
+            />
+          </div>
+        </div>
+
+        <!-- Column 3: Special Requests -->
+        <div class="col-md-4 d-flex flex-column">
+          <label class="form-label">Special Requests</label>
+          <textarea
+            class="form-control bg-dark text-light p-3 rounded-3 border border-secondary border-5 flex-grow-1"
+            placeholder="Let your trainer know if you have any preferences or special requirements"
+            style="resize: none"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <hr class="text-light border-3 rounded-5 mt-5 mb-4 w-75 mx-auto" />
+
+      <!-- Step 3: Review Details -->
+      <h2 class="fw-bold fs-1">Step 3: Review Details</h2>
+      <div class="row g-3 mt-2 d-flex justify-content-center">
+        <!-- Date Card -->
+        <div class="col-md-3">
+            <div id="date-details"></div>
+        </div>
+
+        <!-- Plan Card -->
+        <div class="col-md-3">
+          <div id="plan-details"></div>
+        </div>
+
+        <!-- Trainer Card -->
+        <div class="col-md-3">
+          <div id="trainer-details"></div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="d-flex justify-content-between mt-4 gap-3">
+        <a
+          href="/public/pages/booking.html"
+          class="btn btn-secondary fs-3 px-5 py-2 fw-bold rounded-1 d-inline-flex align-items-center gap-3 w-33"
+        >
+          <img
+            src="/public/images/Right Arrow Icon.png"
+            class="img-fluid icons"
+            alt="Arrow Icon"
+            style="transform: rotate(180deg)"
+          />
+          Edit Preferences
+        </a>
+
+        <a
+          href="#"
+          class="btn btn-danger fs-3 px-5 py-2 fw-bold rounded-1 w-33 lock-it-in"
+        >
+          LOCK <span class="text-light">IT IN</span>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

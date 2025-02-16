@@ -56,6 +56,21 @@ const trainers = [
   },
 ]
 
+const plans = [
+  {
+    name: "Foundation",
+    price: "99",
+  },
+  {
+    name: "Momentum",
+    price: "199",
+  },
+  {
+    name: "Locked In",
+    price: "299",
+  },
+]
+
 async function loadTrainerCards() {
   const trainerContainer = document.getElementById("trainers-container")
 
@@ -94,7 +109,9 @@ flatpickr("#calendar", {
       return date.getDay() === 0
     },
   ],
+  defaultDate: localStorage.getItem("selectedDateTime") || null,
   onChange: function (selectedDates, dateStr, instance) {
+    localStorage.setItem("selectedDateTime", dateStr)
     console.log("Selected Date and Time:", dateStr)
   },
 })
@@ -110,12 +127,12 @@ document.querySelectorAll(".plan-card").forEach((card) => {
     // Add 'selected' class to the clicked card
     card.classList.add("selected")
 
-    // Optional: Store selected plan (e.g., for form submission or console check)
+    // Store selected plan
     const selectedPlan = card.getAttribute("plan")
+    localStorage.setItem("selectedPlan", selectedPlan)
     console.log("Selected Plan:", selectedPlan)
   })
 })
-
 
 // Click listener for the trainer cards
 document.querySelectorAll(".trainer-card").forEach((card) => {
@@ -128,8 +145,148 @@ document.querySelectorAll(".trainer-card").forEach((card) => {
     // Add 'selected' class to the clicked card
     card.classList.add("selected")
 
-    // Optional: Store selected plan (e.g., for form submission or console check)
-    const selectedPlan = card.getAttribute("trainer")
-    console.log("Selected Trainer:", selectedPlan)
+    // Store selected trainer
+    const selectedTrainer = card.getAttribute("trainer")
+    localStorage.setItem("selectedTrainer", selectedTrainer)
+    console.log("Selected Trainer:", selectedTrainer)
   })
 })
+
+// Check if there exists a selected trainer and plan card to highlight
+document.addEventListener("DOMContentLoaded", () => {
+  // Highlight selected plan from storage
+  const storedPlan = localStorage.getItem("selectedPlan")
+  if (storedPlan) {
+    const selectedPlanCard = document.querySelector(`.plan-card[plan="${storedPlan}"]`)
+    if (selectedPlanCard) {
+      selectedPlanCard.classList.add("selected")
+    }
+  }
+
+  // Highlight selected trainer from storage
+  const storedTrainer = localStorage.getItem("selectedTrainer")
+  if (storedTrainer) {
+    const selectedTrainerCard = document.querySelector(`.trainer-card[trainer="${storedTrainer}"]`)
+    if (selectedTrainerCard) {
+      selectedTrainerCard.classList.add("selected")
+    }
+  }
+})
+
+
+// Function to dynamically insert the trainer details
+async function loadTrainerDetails() {
+  const trainerContainer = document.getElementById("trainer-details")
+
+  try {
+    const response = await fetch("/public/components/trainer-details.html")
+    let template = await response.text()
+
+    const storedTrainer = localStorage.getItem("selectedTrainer") // Retrieve from localStorage
+    const selectedTrainer = trainers.find(
+      (trainer) => trainer.name.toLowerCase() === storedTrainer?.toLowerCase()
+    )
+
+    const trainer = selectedTrainer || trainers[0] // Use default if none is found
+
+    let trainerHTML = template
+      .replace(/NAME/g, trainer.name)
+      .replace(/SPECIALTY/g, trainer.specialty)
+      .replace(/ICON/g, trainer.icon)
+      .replace(/ICONNAME/g, trainer.iconName)
+
+    trainerContainer.innerHTML = trainerHTML
+  } catch (error) {
+    console.log("Cannot load trainer details on this page")
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadTrainerDetails)
+
+// Function to dynamically insert the plan details
+async function loadPlanDetails() {
+  const planContainer = document.getElementById("plan-details")
+
+  try {
+    const response = await fetch("/public/components/plan-details.html")
+    let template = await response.text()
+
+    const storedPlan = localStorage.getItem("selectedPlan")
+    const selectedPlan = plans.find(
+      (plan) => plan.name.toLowerCase() === storedPlan?.toLowerCase()
+    )
+
+    const plan = selectedPlan || plans[0]
+
+    let planHTML = template
+      .replace(/PLAN/g, plan.name)
+      .replace(/PRICE/g, plan.price)
+
+    planContainer.innerHTML = planHTML
+
+    // If the selected plan is the "Locked IN Plan", add the span dynamically
+    if (plan.name.toLowerCase() === "locked in") {
+      const prefixSpan = document.getElementById("plan-prefix")
+      prefixSpan.innerHTML =
+        '<span class="fw-bold text-secondary">LOCKED</span> IN '
+    }
+  } catch (error) {
+    console.log("Cannot load plan details on this page")
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadPlanDetails)
+
+// Function to dynamically insert the date details
+async function loadDateDetails() {
+  const dateContainer = document.getElementById("date-details")
+
+  try {
+    const response = await fetch("/public/components/date-details.html")
+    let template = await response.text()
+
+    let storedDate = localStorage.getItem("selectedDateTime")
+
+    // Default date and time if none is provided
+    if (!storedDate) {
+      const now = new Date()
+      now.setMinutes(30, 0, 0) // Sets minutes to 30, seconds & ms to 0
+      storedDate = now.toISOString().slice(0, 16).replace("T", " ")
+    }
+
+    let date = new Date(storedDate)
+
+    let parsedDate = {
+      dayName: date.toLocaleString("default", { weekday: "long" }),
+      day: date.getDate(),
+      month: date.toLocaleString("default", { month: "long" }),
+      year: date.getFullYear(),
+      start: date.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }),
+      end: new Date(date.getTime() + 60 * 60 * 1000).toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }),
+    }
+
+    console.log("Selected Date and Time:", parsedDate)
+
+    let dateHTML = template
+      .replace(/DAYNAME/g, parsedDate.dayName)
+      .replace(/DAY/g, parsedDate.day)
+      .replace(/MONTH/g, parsedDate.month)
+      .replace(/YEAR/g, parsedDate.year)
+      .replace(/START/g, parsedDate.start)
+      .replace(/END/g, parsedDate.end)
+
+    dateContainer.innerHTML = dateHTML
+  } catch (error) {
+    console.log("Cannot load plan details on this page")
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadDateDetails)
