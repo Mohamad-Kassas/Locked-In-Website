@@ -157,7 +157,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Highlight selected plan from storage
   const storedPlan = localStorage.getItem("selectedPlan")
   if (storedPlan) {
-    const selectedPlanCard = document.querySelector(`.plan-card[plan="${storedPlan}"]`)
+    const selectedPlanCard = document.querySelector(
+      `.plan-card[plan="${storedPlan}"]`
+    )
     if (selectedPlanCard) {
       selectedPlanCard.classList.add("selected")
     }
@@ -166,13 +168,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Highlight selected trainer from storage
   const storedTrainer = localStorage.getItem("selectedTrainer")
   if (storedTrainer) {
-    const selectedTrainerCard = document.querySelector(`.trainer-card[trainer="${storedTrainer}"]`)
+    const selectedTrainerCard = document.querySelector(
+      `.trainer-card[trainer="${storedTrainer}"]`
+    )
     if (selectedTrainerCard) {
       selectedTrainerCard.classList.add("selected")
     }
   }
 })
-
 
 // Function to dynamically insert the trainer details
 async function loadTrainerDetails() {
@@ -290,3 +293,34 @@ async function loadDateDetails() {
 }
 
 document.addEventListener("DOMContentLoaded", loadDateDetails)
+
+async function loadTrainerConfirmation() {
+  const trainerContainer = document.getElementById("trainer-confirmation")
+
+  try {
+    const response = await fetch("/public/components/trainer-confirmation.html")
+    let template = await response.text()
+
+    const storedTrainer = localStorage.getItem("selectedTrainer") // Retrieve from localStorage
+    const selectedTrainer = trainers.find(
+      (trainer) => trainer.name.toLowerCase() === storedTrainer?.toLowerCase()
+    )
+
+    const trainer = selectedTrainer || trainers[0] // Use default if none is found
+
+    let trainerHTML = template
+      .replace(/NAME/g, trainer.name)
+      .replace(/SPECIALTY/g, trainer.specialty)
+      .replace(/IMAGE/g, trainer.image)
+      .replace(/ICON/g, trainer.icon)
+      .replace(/ICONNAME/g, trainer.iconName)
+      .replace(/POSITION/g, trainer.position)
+      .replace(/CLASS/g, trainer.class)
+    trainerContainer.innerHTML = trainerHTML
+
+  } catch (error) {
+    console.log("Cannot load trainer confirmation on this page")
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadTrainerConfirmation)

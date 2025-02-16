@@ -12047,6 +12047,10 @@ span.flatpickr-weekday {
   width: 33% !important;
 }
 
+.w-60 {
+  width: 60% !important;
+}
+
 .radial {
   bottom: -30%;
   right: -30%;
