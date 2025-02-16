@@ -71,6 +71,14 @@ const plans = [
   },
 ]
 
+document.querySelectorAll('.plan-selector').forEach(button => {
+  button.addEventListener('click', () => {
+    const planName = button.getAttribute('plan');
+    localStorage.setItem('selectedPlan', planName);
+    window.location.href = '/public/pages/booking.html';
+  });
+});
+
 async function loadTrainerCards() {
   const trainerContainer = document.getElementById("trainers-container")
 
@@ -89,6 +97,14 @@ async function loadTrainerCards() {
         .replace(/CLASS/g, trainer.class)
       trainerContainer.innerHTML += trainerHTML
     })
+
+    document.querySelectorAll('.trainer-selector').forEach(button => {
+      button.addEventListener('click', () => {
+        const trainerName = button.getAttribute('trainer');
+        localStorage.setItem('selectedTrainer', trainerName);
+      });
+    });
+    
   } catch (error) {
     console.log("Cannot load trainer cards on this page")
   }
@@ -112,7 +128,6 @@ flatpickr("#calendar", {
   defaultDate: localStorage.getItem("selectedDateTime") || null,
   onChange: function (selectedDates, dateStr, instance) {
     localStorage.setItem("selectedDateTime", dateStr)
-    console.log("Selected Date and Time:", dateStr)
   },
 })
 
@@ -130,7 +145,6 @@ document.querySelectorAll(".plan-card").forEach((card) => {
     // Store selected plan
     const selectedPlan = card.getAttribute("plan")
     localStorage.setItem("selectedPlan", selectedPlan)
-    console.log("Selected Plan:", selectedPlan)
   })
 })
 
@@ -148,7 +162,6 @@ document.querySelectorAll(".trainer-card").forEach((card) => {
     // Store selected trainer
     const selectedTrainer = card.getAttribute("trainer")
     localStorage.setItem("selectedTrainer", selectedTrainer)
-    console.log("Selected Trainer:", selectedTrainer)
   })
 })
 
@@ -275,8 +288,6 @@ async function loadDateDetails() {
         hour12: false,
       }),
     }
-
-    console.log("Selected Date and Time:", parsedDate)
 
     let dateHTML = template
       .replace(/DAYNAME/g, parsedDate.dayName)
