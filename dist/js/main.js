@@ -23,8 +23,8 @@ const trainers = [
   {
     name: "Jordan",
     specialty: "Strength Training & Powerlifting",
-    image: "/public/images/Jordan Trainer.png",
-    icon: "/public/images/Dumbell Icon.png",
+    image: "../images/Jordan Trainer.png",
+    icon: "../images/Dumbell Icon.png",
     iconName: "Dumbell",
     position: "start",
     class: "info",
@@ -32,8 +32,8 @@ const trainers = [
   {
     name: "Ava",
     specialty: "Yoga, Flexibility & Core Strength",
-    image: "/public/images/Ava Trainer.png",
-    icon: "/public/images/Red Lotus Icon.png",
+    image: "../images/Ava Trainer.png",
+    icon: "../images/Red Lotus Icon.png",
     iconName: "Lotus",
     position: "start",
     class: "danger",
@@ -41,8 +41,8 @@ const trainers = [
   {
     name: "Sophia",
     specialty: "Weight Loss, Cardio & Endurance",
-    image: "/public/images/Sophia Trainer.png",
-    icon: "/public/images/Red Heart Icon.png",
+    image: "../images/Sophia Trainer.png",
+    icon: "../images/Red Heart Icon.png",
     iconName: "Heart",
     position: "start",
     class: "danger",
@@ -50,8 +50,8 @@ const trainers = [
   {
     name: "Liam",
     specialty: "High Intensity Interval Training (HIIT)",
-    image: "/public/images/Liam Trainer.png",
-    icon: "/public/images/Bicep Icon.png",
+    image: "../images/Liam Trainer.png",
+    icon: "../images/Bicep Icon.png",
     iconName: "Bicep",
     position: "end",
     class: "info",
